@@ -1,0 +1,50 @@
+{
+  "name": "warsan-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "^10.4.15",
+    "chart.js": "^2.9.4",
+    "cookiejs": "^2.1.2",
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.5.3",
+    "js-cookie": "^3.0.5",
+    "leaflet": "^1.9.4",
+    "leaflet-defaulticon-compatibility": "^0.1.2",
+    "node-fetch": "^3.3.2",
+    "postcss": "^8.4.29",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
+    "react-leaflet": "^4.2.1",
+    "react-svg": "^16.1.25",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.38",
+    "@types/js-cookie": "^3.0.4",
+    "@types/leaflet": "^1.9.4",
+    "@types/node": "20.7.0",
+    "@types/react": "18.2.23",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.5.3",
+    "formik": "^2.4.5",
+    "google-fonts-webpack-plugin": "^0.4.4",
+    "next": "^13.5.3",
+    "postcss": "^8.4.30",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.2.2"
+  }
+}
