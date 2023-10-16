@@ -3,7 +3,7 @@
 
 'use client'
 
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'; 
@@ -152,6 +152,10 @@ const SignUpPage = () => {
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
           </div>
+          <div className='text-red'>
+          {user && Object.values(user)[0]}
+          </div>
+
           <button
             type="submit"
             className={`md:w-72 w-44 h-12 bg-customBlue text-white rounded-lg font-poppins text-lg ${

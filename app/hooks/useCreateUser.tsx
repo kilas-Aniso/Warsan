@@ -12,7 +12,7 @@ interface UsersData {
 }
 
 const useCreateUsers = (userData: UsersData) => {
-  const [user, setUser] = useState<UsersData>({
+  const [user, setUser] = useState<UsersData [] | object>({
 first_name:'',
 last_name:'',
 email:'',
