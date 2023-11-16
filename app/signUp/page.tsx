@@ -3,10 +3,11 @@
 
 'use client'
 
-import React, { use, useState } from 'react';
+
+import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; 
+import { useRouter } from 'next/navigation';
 import useCreateUser from '../hooks/useCreateUser';
 
 const SignUpPage = () => {
@@ -30,17 +31,40 @@ const SignUpPage = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  const validateFirstName = (firstName:string) => {
+    const regex = /^[A-Za-z]+$/;
+    return regex.test(firstName);
+  };
+
+  const validateLastName = (lastName: string) => {
+    const regex = /^[A-Za-z]+$/;
+    return regex.test(lastName);
+  };
+
+  const validatePassword = (password: string | any[]) => {
+    return password.length >= 8;
+  };
+
   const handleCreateUser = async (e:any) => {
-    e.preventDefault(); 
-    if (username && email && password && firstName && lastName) {
+    e.preventDefault();
+    if (
+      validateFirstName(firstName) &&
+      validateLastName(lastName) &&
+      validatePassword(password)
+    ) {
       await handleSignUp();
-      router.push('/signIn');
+      // Check if the user object contains the success message
+      if (user && user.message === 'NGO user created successfully') {
+        router.push('/signIn');
+      }
     } else {
-      alert('Please fill all required fields.');
+      alert('Please fill all required fields with valid data.');
     }
   };
 
   const isSignUpComplete = user !== null;
+
+
 
   return (
     <div className="flex md:flex-row flex-col h-screen font-poppins">
@@ -154,6 +178,7 @@ const SignUpPage = () => {
           </div>
           <div className='text-red'>
           {user && Object.values(user)[0]}
+          
           </div>
 
           <button

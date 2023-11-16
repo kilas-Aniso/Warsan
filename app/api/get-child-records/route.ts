@@ -9,7 +9,7 @@ export async function GET (){
                 statusText : 'failed'
             })
         }
-        const response = await fetch(`${BASE_URL}/immunization-records`)
+        const response = await fetch(`${BASE_URL}/immunization-records/`,{ cache: 'no-store' })
         const result = await response.json();
         return new Response(JSON.stringify(result), {
             status:200,

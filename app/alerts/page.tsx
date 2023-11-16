@@ -205,7 +205,6 @@ const MapPage: React.FC = () => {
         <SearchBar searchQuery={searchQuery} handleSearchChange={handleSearchChange} placeholder="Search Child" />
       </div>
       <div className="flex md:flex-row space-x-6 md:space-x-6 ml-80 mr-80">
-        {/* Render the MapComponent here */}
         <Map locations={locations} />
         <div className="flex-1 bg-white p-4">
           <table className="ml-20 w-full text-18">

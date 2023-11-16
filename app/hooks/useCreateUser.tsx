@@ -12,26 +12,25 @@ interface UsersData {
 }
 
 const useCreateUsers = (userData: UsersData) => {
-  const [user, setUser] = useState<UsersData [] | object>({
-first_name:'',
-last_name:'',
-email:'',
-password:'',
-username:''
-
+  const [user, setUser] = useState<UsersData[] | object>({
+    first_name: '',
+    last_name: '',
+    email: '',
+    password: '',
+    username: ''
   });
+  const [error, setError] = useState<string>('');
 
-  const handleSignUp = async() =>{
-    const createdUser = await createUser(userData);
-    console.log({createdUser});
-    
-        setUser(createdUser);
+  const handleSignUp = async () => {
+    try {
+      const createdUser = await createUser(userData);
+      setUser(createdUser);
+    } catch (error:any) {
+      setError(error.message);
+    }
+  };
 
-
-  }
-
-
-  return { handleSignUp, user };
+  return { handleSignUp, user, error };
 };
 
 export default useCreateUsers;
