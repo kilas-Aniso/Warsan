@@ -7,7 +7,7 @@ export async function GET (){
                 statusText : 'failed'
             })
         }
-        const response = await fetch(`${BASE_URL}/locations`)
+        const response = await fetch(`${BASE_URL}/locations/`,{ cache: 'no-store' })
         const result = await response.json();
         return new Response(JSON.stringify(result), {
             status:200,

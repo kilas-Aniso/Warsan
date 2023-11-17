@@ -1,9 +1,8 @@
-'use client'
-
 import { useState } from 'react';
 import { createUser } from '../utilities/utils';
 
 interface UsersData {
+  message: string;
   username: string;
   email: string;
   password: string;
@@ -12,13 +11,7 @@ interface UsersData {
 }
 
 const useCreateUsers = (userData: UsersData) => {
-  const [user, setUser] = useState<UsersData[] | object>({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    username: ''
-  });
+  const [user, setUser] = useState<UsersData | null>(null);
   const [error, setError] = useState<string>('');
 
   const handleSignUp = async () => {

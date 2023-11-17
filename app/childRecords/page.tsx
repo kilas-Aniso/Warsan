@@ -1,3 +1,6 @@
+
+
+
 // Add this type definition where appropriate in your code
 interface ChildData {
   child: {
@@ -11,7 +14,7 @@ interface ChildData {
       vaccine_choice: string;
       date_of_administration: string;
     }>;
-    // Add other properties as needed
+    [key: string]: any; // Add index signature
   }[];
   // Add other properties as needed
 }
@@ -56,7 +59,7 @@ const ChildRecordsPage = () => {
     'Vaccines', // Display name for the vaccine column
   ];
 
-  const filteredChildRecords = Array.isArray(childData?.child)
+  const filteredChildRecords: ChildData['child'] = Array.isArray(childData?.child)
     ? childData?.child.filter((item) => {
         const searchTerm = searchQuery.toLowerCase();
         const isIncluded =

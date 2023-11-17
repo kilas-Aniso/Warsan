@@ -23,6 +23,7 @@ const SignUpPage = () => {
     password,
     first_name: firstName,
     last_name: lastName,
+    message: ''
   });
 
   const router = useRouter();
